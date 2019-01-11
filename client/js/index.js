@@ -6,23 +6,23 @@ var campos = [
 
 console.log(`index.js: \n${campos}`);
 //pegou o corpo da tabela
-var tbody = document.querySelector('table tbody');
+let tbody = document.querySelector('table tbody');
 
 document.querySelector('.form').addEventListener('submit', function (event) {
     event.preventDefault();
     //capturando a coluna tr
-    var tr = document.createElement('tr');
+    let tr = document.createElement('tr');
     campos.forEach(function (campo) {
 
-        var td = document.createElement('td');
+        let td = document.createElement('td');
         td.textContent = campo.value;
         tr.appendChild(td);
         console.log(`coluna com o valor ${campo.value}`);
     });
 
-    var tdVolume = document.createElement('td');
+    let tdVolume = document.createElement('td');
     //adicionando o valor para essa td
-    var cal = campos[1].value * campos[2].value;
+    let cal = campos[1].value * campos[2].value;
     cal = cal.toFixed(2);
     tdVolume.textContent ="R$" + cal;
     //na tr adicionou a td recem criada

@@ -1,24 +1,18 @@
 //NegociacaoController é o meu controller
 class NegociacaoController {
 
-    constructor() {
-        let $ = document.querySelector.bind(document);
-        this._inputData = $('#data');
-        this._inputQuantidade = $('#quantidade');
-        this._inputValor = $('#valor');
-    }
-
     adiciona(event) {
-        
+        //cancelar comportamento padrão do formulário
         event.preventDefault();
 
-        let helper = new DateHelper();
+        //capturando cada valor do formulario pelo id
+        let $ = document.querySelector.bind(document);
+        let inputData = $('#data');
+        let inputQuantidade = $('#quantidade');
+        let inputValor = $('#valor');
 
-        let negociacao = new Negociacao(
-            helper.textoParaData(this._inputData.value),
-            this._inputQuantidade.value,
-            this._inputValor.valor
-        );
-        console.log("Negociação:\n" + negociacao.data);
+        console.log(inputData.value);
+        console.log(inputQuantidade.value);
+        console.log(inputValor.value);
     }
 }
