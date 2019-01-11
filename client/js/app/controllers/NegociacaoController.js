@@ -1,18 +1,21 @@
 //NegociacaoController é o meu controller
 class NegociacaoController {
 
-    adiciona(event) {
-        //cancelar comportamento padrão do formulário
-        event.preventDefault();
+    constructor(){
 
         //capturando cada valor do formulario pelo id
         let $ = document.querySelector.bind(document);
-        let inputData = $('#data');
-        let inputQuantidade = $('#quantidade');
-        let inputValor = $('#valor');
+        this.inputData = $('#data');
+        this.inputQuantidade = $('#quantidade');
+        this.inputValor = $('#valor');
+    }
 
-        console.log(inputData.value);
-        console.log(inputQuantidade.value);
-        console.log(inputValor.value);
+    adiciona(event) {
+        //cancelar comportamento padrão do formulário
+        event.preventDefault();        
+
+        console.log(this.inputData.value);
+        console.log(this.inputQuantidade.value);
+        console.log(this.inputValor.value);
     }
 }
