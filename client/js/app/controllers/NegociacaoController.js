@@ -9,17 +9,20 @@ class NegociacaoController {
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
         this._listaNegociacoes = new ListaNegociacoes();
+        
+        this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+        this._negociacoesView.update(this._listaNegociacoes);
     }
 
     adiciona(event) {
         //cancelar comportamento padrão do formulário
         event.preventDefault();
 
-
         this._listaNegociacoes.adiciona(this._criaNegociacao());
+        //renderizar novamente a tabela
+        this._negociacoesView.update(this._listaNegociacoes);
         //chamando o limpa formulário
         this._limpaFormulario();
-        console.log(this._listaNegociacoes.negociacoes);
     }
 
     //cria negociacao
